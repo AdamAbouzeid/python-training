@@ -1,0 +1,10 @@
+with open("server_log.txt", "r") as f:
+    with open("error_log.txt", "w") as g:
+        counter = 0
+        for line in f:
+            data = line
+            if "ERROR" in data:
+                print(data)
+                g.write(data + "\n")
+                counter += 1
+        print("Number of errors: " + str(counter))
